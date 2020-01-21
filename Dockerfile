@@ -1,6 +1,6 @@
 FROM fedora
 
-RUN dnf install -y openssh-server git nano curl chromium-browser nodejs npm
+RUN dnf install -y openssh-server git nano curl nodejs npm
 RUN mkdir /var/run/sshd
 RUN echo 'root:password' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
