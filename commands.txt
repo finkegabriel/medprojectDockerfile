@@ -1,0 +1,7 @@
+docker build -t es_sshd .
+docker run -d -P --name test_sshd es_sshd
+docker port *hash* 22
+
+ docker image rm *
+ docker image ls
+ docker container ls -a

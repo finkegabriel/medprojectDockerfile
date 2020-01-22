@@ -1,6 +1,7 @@
 FROM fedora
 
-RUN dnf install -y openssh-server git nano curl nodejs npm
+RUN dnf update && dnf install -y git nano curl nodejs npm 
+#chromium-browser
 RUN mkdir /var/run/sshd
 RUN echo 'root:password' | chpasswd
 RUN sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
@@ -14,4 +15,4 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
 
-CMD  git clone https://github.com/finkegabriel/elasticNode.git
+CMD git clone https://github.com/finkegabriel/elasticNode.git 
