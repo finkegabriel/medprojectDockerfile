@@ -4,9 +4,13 @@ docker port test_sshd 22
 
 
 in docker container
+
 npm cache clean -f
 npm install -g n
 n stable
+mkdir cookies
+
+chromium-browser
 
  docker image rm *
  docker image ls
